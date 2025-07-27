@@ -14,6 +14,11 @@ app.use (express.json());
 
 app.use('/api/products', productRoutes);
 
+app.get('/', (req, res) => {
+  res.send('✅ Backend is running');
+});
+
+
 app.listen(PORT, ()=>{
     connectDB();
     console.log(`server started @http://localhost:${PORT}`)

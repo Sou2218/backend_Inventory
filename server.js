@@ -8,12 +8,12 @@ dotenv.config();
 const app = express()
 
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+const corsOptions = {
+  origin: 'https://frontend-inventory-git-master-sou2218s-projects.vercel.app',
+  optionsSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
 const PORT = process.env.PORT || 4000
 
 app.use (express.json());
